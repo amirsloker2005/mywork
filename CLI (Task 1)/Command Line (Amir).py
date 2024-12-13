@@ -33,8 +33,16 @@ def valid_priority(prior):
         return False
     return True
 
+def check_duplicate_name(list_of_tasks : list, name):
+    for task in tasks:
+        if task["name"] == name : return True
+    return False
+
 def get_task():
     name = input("Enter Task Name: ")
+        while check_duplicate_name(list_of_tasks, name):
+        print(f"a task with the name \"{name}\" already exists, try again.")
+        name = input("Enter Task Name: ")
     global biggest_Name
     biggest_Name = max(biggest_Name, len(name))
 
@@ -117,6 +125,8 @@ def extract_tasks(list_of_tasks):
         match = re.search(file_extract_pattern, task)
         if match:
             name = match.group(1)
+            if check_duplicate_name(list_of_tasks, name):
+                continue
             biggest_Name = max(biggest_Name, len(name))
             description = match.group(7)
             biggest_Description = max(biggest_Description, len(description))
