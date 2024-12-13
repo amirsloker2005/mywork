@@ -1,0 +1,16 @@
+wrong inputs :
+
+test1 || medium || 2021-1-15 || Descirption		#wrong month
+
+test2 || low || 2021-12-3 || Description		#wrong day
+
+test3 || low || 2021-1-1  ||  Description		#priority
+
+
+right ones:
+
+test4 || low || 2024-12-32 || This is a looooooooooooooooooooooooong Description
+
+test5 || High // 2024-1-1	|| ay 7aga
+
+test6 || medium // 2020-2-20 || D
